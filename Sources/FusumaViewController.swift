@@ -373,6 +373,28 @@ public class FusumaViewController: UIViewController {
         }
     }
     
+    func hideGalleryButton(){
+        let btnGallery = self.value(forKey: "libraryButton") as? UIButton
+        btnGallery?.isHidden = true
+    }
+    
+    func hideCameraButton() {
+        
+        let btnCamera = self.value(forKey: "cameraButton") as? UIButton
+        btnCamera?.isHidden = true
+    }
+    
+    func cameraOnlyMode() {
+        hideCameraButton()
+        hideGalleryButton()
+        changeMode(FusumaMode.camera)
+    }
+
+    func galleryOnlyMode() {
+        hideCameraButton()
+        hideGalleryButton()
+        changeMode(FusumaMode.library)
+    }
 }
 
 extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVideoCameraViewDelegate {
