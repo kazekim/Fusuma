@@ -550,15 +550,15 @@ public extension FusumaViewController {
     }
     
     func cameraOnlyMode() {
+        changeMode(FusumaMode.camera)
         hideCameraButton()
         hideGalleryButton()
-        changeMode(FusumaMode.camera)
     }
     
     func galleryOnlyMode() {
+        changeMode(FusumaMode.library)
         hideCameraButton()
         hideGalleryButton()
-        changeMode(FusumaMode.library)
     }
 
 }

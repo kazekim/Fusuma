@@ -40,6 +40,7 @@ class ViewController: UIViewController, FusumaDelegate {
         fusumaSavesImage = true
 
         self.present(fusuma, animated: true, completion: nil)
+        fusuma.cameraOnlyMode()
     }
     
     // MARK: FusumaDelegate Protocol
