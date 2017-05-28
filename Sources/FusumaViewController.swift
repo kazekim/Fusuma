@@ -373,28 +373,6 @@ public class FusumaViewController: UIViewController {
         }
     }
     
-    func hideGalleryButton(){
-        let btnGallery = self.value(forKey: "libraryButton") as? UIButton
-        btnGallery?.isHidden = true
-    }
-    
-    func hideCameraButton() {
-        
-        let btnCamera = self.value(forKey: "cameraButton") as? UIButton
-        btnCamera?.isHidden = true
-    }
-    
-    func cameraOnlyMode() {
-        hideCameraButton()
-        hideGalleryButton()
-        changeMode(FusumaMode.camera)
-    }
-
-    func galleryOnlyMode() {
-        hideCameraButton()
-        hideGalleryButton()
-        changeMode(FusumaMode.library)
-    }
 }
 
 extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVideoCameraViewDelegate {
@@ -557,4 +535,30 @@ private extension FusumaViewController {
         
         button.addBottomBorder(fusumaTintColor, width: 3)
     }
+}
+
+public extension FusumaViewController {
+    func hideGalleryButton(){
+        let btnGallery = self.value(forKey: "libraryButton") as? UIButton
+        btnGallery?.isHidden = true
+    }
+    
+    func hideCameraButton() {
+        
+        let btnCamera = self.value(forKey: "cameraButton") as? UIButton
+        btnCamera?.isHidden = true
+    }
+    
+    func cameraOnlyMode() {
+        hideCameraButton()
+        hideGalleryButton()
+        changeMode(FusumaMode.camera)
+    }
+    
+    func galleryOnlyMode() {
+        hideCameraButton()
+        hideGalleryButton()
+        changeMode(FusumaMode.library)
+    }
+
 }
