@@ -537,3 +537,28 @@ private extension FusumaViewController {
     }
 }
 
+public extension FusumaViewController {
+    func hideGalleryButton(){
+        let btnGallery = self.value(forKey: "libraryButton") as? UIButton
+        btnGallery?.isHidden = true
+    }
+    
+    func hideCameraButton() {
+        
+        let btnCamera = self.value(forKey: "cameraButton") as? UIButton
+        btnCamera?.isHidden = true
+    }
+    
+    func cameraOnlyMode() {
+        changeMode(FusumaMode.camera)
+        hideCameraButton()
+        hideGalleryButton()
+    }
+    
+    func galleryOnlyMode() {
+        changeMode(FusumaMode.library)
+        hideCameraButton()
+        hideGalleryButton()
+    }
+
+}
